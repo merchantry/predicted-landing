@@ -1,0 +1,259 @@
+html {
+  height: 100vh;
+}
+
+body {
+  background: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: "Clash Display" !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url('img/bg-mobile.png');
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url('img/background.png');
+  }
+}
+
+
+.randomText{
+  font-family: IBM Plex Mono Regular;
+}
+
+body.scrolling {
+  scroll-behavior: smooth;
+}
+
+
+
+canvas {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+
+  position: fixed;
+    z-index: -1;
+}
+
+
+.d-none{
+  display: none;
+}
+
+#predicted{
+  display: flex;
+  position: fixed;
+  height: 60px;
+  top: 70px;
+  left: 70px;
+}
+
+#grid-izq{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+#grid-der{
+  display: flex;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: rotate(180deg);
+}
+
+.img-auto{
+  width: 100%;
+}
+
+#cosito-der{
+  display: flex;
+  position: fixed;
+  right: 70px;
+  bottom: 70px;
+}
+
+#cosito-izq{
+  display: flex;
+  position: fixed;
+  left: 70px;
+  bottom: 70px;
+}
+
+h1{
+  font-size: 84px !important;
+  font-weight: 500 !important;
+  line-height: 84px !important;
+}
+
+h2{
+  font-weight: 500 !important;
+  line-height: normal;
+}
+
+h3{
+  font-weight: 500 !important;
+  line-height: normal;
+}
+
+h4{
+  font-size: 20px !important;
+  line-height: normal;
+}
+
+
+h5{
+  color: #FF893C;
+}
+
+h6{
+  font-size: 34px !important;
+  font-weight: 500 !important;
+  line-height: normal;
+}
+
+.text-orange{
+  color: #FF893C;
+  text-shadow: 0 0 10px #FF893C;
+}
+
+.false-h3{
+  font-family: "Clash Display" !important;
+  font-weight: 500 !important;
+  line-height: normal;
+}
+
+
+
+p{
+  font-size: 14px;
+  font-family: "IBM Plex Sans";
+  font-optical-sizing: auto;
+}
+
+.product-title{
+  font-size: 42px;
+  font-weight: 500;
+}
+
+
+/* */
+
+.text-prediction span {
+  display: inline-block;
+  opacity: 0;
+  position: relative;
+  transition: all 0.3s ease-out;
+  text-align: center;
+}
+
+.text-prediction span.random {
+  color: #FF893C;
+  text-shadow: 0 0 10px #FF893C;
+  opacity: 0;
+}
+
+.text-prediction span.revealed {
+  opacity: 1;
+}
+
+
+/* */
+
+
+
+.linea-svg{
+  stroke: white;
+  stroke-width: 1; /* Ajusta el grosor del trazo según tu preferencia */
+  stroke-dasharray: 150; /* Longitud total del trazo (ajusta según la longitud del path) */
+  stroke-dashoffset: 150; /* Longitud total del trazo (ajusta según la longitud del path) */
+}
+
+.animated-path {
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.animate {
+  stroke-dashoffset: 0; /* La animación hará que el trazo se dibuje desde la derecha */
+}
+
+
+
+
+.button-link{
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  border-radius: 10px;
+}
+
+.text-link{
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+
+.frosty{
+  background: rgba(0, 0, 0, 0);
+  background-size: 200%;
+  border-radius: 16px;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: solid rgba(255, 255, 255, 0.05) 1px;
+  transition: 0.2s ease-in-out;
+}
+
+.frosty-cifras{
+  background: rgba(0, 0, 0, 0.5);
+  background-size: 200%;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: solid rgba(255, 255, 255, 0.05) 1px;
+  transition: 0.2s ease-in-out;
+}
+
+.frosty:hover{
+  background: rgba(255, 255, 255, 0.03);
+  background-size: 100%;
+}
+
+
+.mask1 {
+  color: rgba(179, 179, 179, 0.2);
+  -webkit-mask-image: linear-gradient(45deg,transparent, transparent, black, transparent);
+  mask-image: linear-gradient(45deg,transparent, transparent, black, transparent);
+}
+
+.mask2 {
+  color: rgba(179, 179, 179, 0.2);
+  -webkit-mask-image: linear-gradient(45deg, transparent,black, transparent, transparent);
+  mask-image: linear-gradient(45deg, transparent,black, transparent, transparent);
+}
+
+.font-2{
+  font-family: IBM Plex Mono Regular;
+}
+
+
+section {
+  scroll-snap-align: start;
+}
+body {
+  scroll-snap-type: y mandatory;
+}

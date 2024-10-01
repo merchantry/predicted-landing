@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <title>predicted</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+</head>
+<body>
+
+  <!-- MENU -->
+  <div class="hidden lg:flex fixed bg-black px-[40px] py-[20px] items-center w-full justify-between z-50 border-solid border-b border-neutral-900">
+
+    <object type="image/svg+xml" data="img/predicted.svg" height="50px"></object>
+    
+    <ul class="flex gap-[30px]">
+      <li><a href="#home" class="hover:text-[#FF893C] transition">Home</a></li>
+      <li><a href="#about" class="hover:text-[#FF893C] transition">About us</a></li>
+      <li><a href="#products" class="hover:text-[#FF893C] transition">Ecosystem</a></li>
+      <li><a href="#coming-soon" class="hover:text-[#FF893C] transition">Coming soon</a></li>
+      <li><a href="#franchise" class="hover:text-[#FF893C] transition">Franchise</a></li>
+    </ul>
+
+    <!-- Boton  -->
+    <a class="group flex items-center h-[45px] z-30" href="https://robinos.finance" target="_blank">
+
+      <svg width="15" height="45" viewBox="0 0 15 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+        <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+      </svg>
+
+      <div class="h-full group-hover:bg-[#FF893C] bg-white flex items-center text-link transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+        Launch App 
+        <svg class="ml-[10px] group-hover:rotate-45 transition " width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z" fill="#000"/>
+        </svg>
+      </div>
+
+      <svg width="15" height="45" viewBox="0 0 15 45" xmlns="http://www.w3.org/2000/svg" class="rotate-180 fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+        <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+        </svg>
+    </a>
+
+  </div>
+
+  <!-- Scroll to top -->
+  <div id="scroll-to-top" class="hidden fixed md:flex bottom-[40px] right-[40px] z-20 transition origin-bottom-right	">
+    
+    <div class="flex items-center justify-center">
+
+      <svg class="absolute -rotate-[45deg]" width="20" height="20" viewBox="0 0 12 12" fill="white" xmlns="http://www.w3.org/2000/svg" id="scroll-to-top-arrow">
+        <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z"/>
+      </svg>
+
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 1L13.2533 1C11.662 1 10.1358 1.63214 9.01062 2.75736L2.75736 9.01062C1.63215 10.1358 1.00001 11.662 1.00001 13.2533L1 22" stroke="white" stroke-width="2"/>
+        <path d="M50 71L58.7467 71C60.338 71 61.8642 70.3679 62.9894 69.2426L69.2426 62.9894C70.3679 61.8642 71 60.338 71 58.7467L71 50" stroke="white" stroke-width="2"/>
+      </svg>
+
+      
+    </div>
+      
+  </div>
+
+  <!-- Social media -->
+  <div class="fixed hidden xl:flex gap-[5px] bottom-[40px] left-[40px] z-20">
+    <!-- Telegram -->
+    <a class="group/carlos flex items-center justify-center" href="https://telegram.com" target="_blank">                    
+      <svg class="absolute group-hover/carlos:fill-black fill-white transition mr-[2px]" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.95 1.27766C18.0167 1.07593 18.0167 0.87419 17.95 0.605208C17.95 0.470717 17.8165 0.268981 17.7498 0.201736C17.5497 -1.55315e-07 17.2161 0 17.0827 0C16.4822 0 15.4815 0.336227 10.8782 2.28634C9.27701 2.9588 6.07468 4.30371 1.2712 6.45556C0.470617 6.79179 0.0703264 7.06077 0.00361136 7.39699C-0.0631037 7.93496 0.804192 8.13669 1.80492 8.47292C2.67221 8.7419 3.80637 9.07813 4.40681 9.07813C4.94053 9.07813 5.54096 8.87639 6.20811 8.40568C10.678 5.31239 13.013 3.76574 13.1465 3.76574C13.2799 3.76574 13.4133 3.6985 13.4801 3.76574C13.6135 3.90023 13.6135 4.03472 13.5468 4.10197C13.4801 4.4382 9.27701 8.33843 9.01015 8.60741C8.07613 9.54885 7.00869 10.1541 8.67657 11.23C10.0776 12.1714 10.8782 12.7766 12.3459 13.7181C13.2799 14.3233 14.0138 15.063 14.9478 14.9957C15.4148 14.9285 15.8818 14.525 16.0819 13.2473C16.6824 10.3558 17.7498 3.90023 17.95 1.27766Z"/>
+        </svg>
+
+      <svg  class="group-hover/carlos:fill-white fill-[#0A0A0A] transition" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28.0774 0H11.9226H9.59455C8.54053 0 7.52968 0.421427 6.78437 1.17157L1.16401 6.82843C0.418709 7.57857 0 8.59599 0 9.65685V36C0 38.2091 1.77931 40 3.97419 40H11.9226H28.0774H30.4054C31.4595 40 32.4703 39.5786 33.2156 38.8284L38.836 33.1716C39.5813 32.4214 40 31.404 40 30.3431V4C40 1.79086 38.2207 0 36.0258 0H28.0774Z" />
+      </svg>
+    </a>
+    <!-- Twitter -->
+    <a class="group/carlos flex items-center justify-center" href="https://x.com" target="_blank">
+      <svg class="absolute group-hover/carlos:fill-black fill-white transition" width="17" height="15" viewBox="0 0 17 15"xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.3885 0H15.9953L10.3002 6.35385L17 15H11.7541L7.64539 9.75615L2.94405 15H0.335697L6.42711 8.20385L0 0H5.37904L9.09299 4.79308L13.3885 0ZM12.4736 13.4769H13.918L4.59417 1.44308H3.04413L12.4736 13.4769Z"/>
+      </svg>
+
+      <svg  class="group-hover/carlos:fill-white fill-[#0A0A0A] transition" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28.0774 0H11.9226H9.59455C8.54053 0 7.52968 0.421427 6.78437 1.17157L1.16401 6.82843C0.418709 7.57857 0 8.59599 0 9.65685V36C0 38.2091 1.77931 40 3.97419 40H11.9226H28.0774H30.4054C31.4595 40 32.4703 39.5786 33.2156 38.8284L38.836 33.1716C39.5813 32.4214 40 31.404 40 30.3431V4C40 1.79086 38.2207 0 36.0258 0H28.0774Z" />
+      </svg>
+    </a>
+    <!-- Discord -->
+    <a class="group/carlos flex items-center justify-center" href="https://discord.com" target="_blank">
+      <svg class="absolute group-hover/carlos:fill-black fill-white transition" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.9569 1.25403C19.2028 4.5361 20.3257 8.22005 19.9173 12.4733C19.9173 12.4733 19.9173 12.5068 19.8833 12.5068C18.3861 13.612 16.6847 14.4493 14.8812 14.9851C14.8472 15.0186 14.8472 14.9851 14.8132 14.9851C14.4389 14.4493 14.0986 13.9134 13.7924 13.3441C13.7924 13.3106 13.7924 13.3106 13.7924 13.2771L13.8264 13.2436C14.3708 13.0427 14.8812 12.8082 15.3917 12.5068C15.3917 12.5068 15.4257 12.5068 15.4257 12.4733C15.4257 12.4398 15.4257 12.4398 15.3917 12.4064C15.2896 12.3394 15.1875 12.2724 15.0854 12.1719C15.0514 12.1719 15.0514 12.1719 15.0173 12.1719C11.7847 13.6455 8.24583 13.6455 4.97917 12.1719C4.94515 12.1719 4.91112 12.1719 4.91112 12.1719C4.80904 12.2724 4.70695 12.3394 4.60487 12.4064C4.57084 12.4398 4.57084 12.4398 4.57084 12.4733C4.57084 12.5068 4.57084 12.5068 4.60487 12.5068C5.08126 12.8082 5.6257 13.0427 6.17014 13.2436C6.17014 13.2436 6.17014 13.2771 6.20417 13.2771C6.20417 13.3106 6.20417 13.3106 6.20417 13.3441C5.89792 13.9134 5.55765 14.4493 5.18334 14.9851C5.14931 14.9851 5.11529 15.0186 5.11529 14.9851C3.31182 14.4493 1.61043 13.612 0.113212 12.5068C0.0791843 12.5068 0.0791843 12.4733 0.0791843 12.4733C-0.261093 8.78938 0.453489 5.07194 3.0396 1.25403C3.0396 1.25403 3.0396 1.25403 3.07362 1.25403C4.36668 0.651203 5.72778 0.249318 7.12292 0.0148846C7.15695 -0.0186058 7.19098 0.0148846 7.19098 0.0148846C7.39514 0.349789 7.56528 0.718184 7.70139 1.05309C9.23264 0.818655 10.7639 0.818655 12.2951 1.05309C12.4312 0.718184 12.6014 0.349789 12.8055 0.0148846C12.8055 0.0148846 12.8396 -0.0186058 12.8736 0.0148846C14.2687 0.249318 15.6298 0.651203 16.9229 1.25403C16.9569 1.25403 16.9569 1.25403 16.9569 1.25403ZM6.68056 10.2295C7.66736 10.2295 8.48403 9.32523 8.48403 8.25354C8.48403 7.14835 7.70139 6.2776 6.68056 6.2776C5.69376 6.2776 4.87709 7.14835 4.87709 8.25354C4.87709 9.32523 5.69376 10.2295 6.68056 10.2295ZM13.316 10.2295C14.3368 10.2295 15.1194 9.32523 15.1194 8.25354C15.1535 7.14835 14.3368 6.2776 13.316 6.2776C12.3292 6.2776 11.5465 7.14835 11.5465 8.25354C11.5465 9.32523 12.3292 10.2295 13.316 10.2295Z"/>
+      </svg>
+      <svg  class="group-hover/carlos:fill-white fill-[#0A0A0A] transition" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M28.0774 0H11.9226H9.59455C8.54053 0 7.52968 0.421427 6.78437 1.17157L1.16401 6.82843C0.418709 7.57857 0 8.59599 0 9.65685V36C0 38.2091 1.77931 40 3.97419 40H11.9226H28.0774H30.4054C31.4595 40 32.4703 39.5786 33.2156 38.8284L38.836 33.1716C39.5813 32.4214 40 31.404 40 30.3431V4C40 1.79086 38.2207 0 36.0258 0H28.0774Z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Side random text -->
+  <div class="hidden xl:block fixed mask1 font-2 text-right random-text  h-[400px] w-[400px] bottom-[0px] left-[0px] select-none" data-length="3000"></div>
+  <div class="hidden xl:block mask2 font-2 random-text fixed h-[400px] w-[400px] top-[0px] right-[0px] select-none" data-length="3000"></div>
+
+
+  <!-- MAIN CONTENT  -->
+  <main class="mx-auto w-full md:w-[700px] lg:w-[1000px] px-[20px] md:px-[0px] z-10">
+
+    <!-- HERO MOBILE -->
+    <section class="block relative justify-center md:hidden h-screen">
+
+      <object type="image/svg+xml" data="img/predicted.svg" height="80px" class="mx-auto mt-[30px]"></object>
+
+        <div class="absolute bottom-[100px]">
+          <h1 class="text-prediction mb-[30px]" data-text="Easily predicted" data-speed="50"></h1>
+
+          <div class="flex justify-end items-center">
+
+            <h5 class="text-prediction text-white mr-[30px]" data-text="SCROLL DOWN" data-speed="50"></h5>
+
+            <div class="flex items-center justify-center">
+
+              <svg class="absolute rotate-[135deg] " width="20" height="20" viewBox="0 0 12 12" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z"/>
+              </svg>
+    
+              <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 1L13.2533 1C11.662 1 10.1358 1.63214 9.01062 2.75736L2.75736 9.01062C1.63215 10.1358 1.00001 11.662 1.00001 13.2533L1 22" stroke="white" stroke-width="2"/>
+                <path d="M50 71L58.7467 71C60.338 71 61.8642 70.3679 62.9894 69.2426L69.2426 62.9894C70.3679 61.8642 71 60.338 71 58.7467L71 50" stroke="white" stroke-width="2"/>
+              </svg>
+
+              
+            </div>
+            
+          </div>
+
+        </div>
+
+    </section>
+
+    <!-- HERO  -->
+    <section class="hidden md:flex justify-center pt-[90px] h-screen" id="home">
+
+      <div class="absolute bottom-[200px]">
+        <h1 class="text-prediction  mb-[30px]" data-text="Easily predicted" data-speed="50"></h1>
+
+        <div class="flex justify-end items-center">
+
+          <h5 class="text-prediction text-white mr-[30px]" data-text="SCROLL DOWN" data-speed="50"></h5>
+
+          <div class="flex items-center justify-center">
+
+            <svg class="absolute rotate-[135deg] " width="20" height="20" viewBox="0 0 12 12" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z"/>
+            </svg>
+  
+            <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 1L13.2533 1C11.662 1 10.1358 1.63214 9.01062 2.75736L2.75736 9.01062C1.63215 10.1358 1.00001 11.662 1.00001 13.2533L1 22" stroke="white" stroke-width="2"/>
+              <path d="M50 71L58.7467 71C60.338 71 61.8642 70.3679 62.9894 69.2426L69.2426 62.9894C70.3679 61.8642 71 60.338 71 58.7467L71 50" stroke="white" stroke-width="2"/>
+            </svg>
+
+            
+          </div>
+          
+        </div>
+
+      </div>
+
+  </section>
+
+    <!-- NO MORE BLIND LUCK -->
+    <section class="flex justify-center pb-[90px] md:pb-[0px] pt-[90px] items-center h-fit md:h-screen" id="no-more-blind-luck">
+        <p class="text-prediction false-h3 text-[26px] lg:text-[38px] inline-flex text-center" data-random-duration="300" data-speed="50" data-highlight="15,16,17,18,19" data-text="Predicted simplifies decentralised prediction events, allowing anyone to understand, participate, and profit from their knowledge. No more blind luck only."></p>
+    </section>
+
+    <!-- COSOS  -->
+    <section class="h-fit md:h-screen pt-[90px] flex items-center" id="about">
+      <div class="grid grid-cols-1 md:grid-cols-6 gap-[50px]">
+
+        <!-- Prediction events -->
+        <div class="col-span-3 group grid grid-cols-3">
+
+          <div class="col-span-3 md:col-span-2">
+            <!-- Título -->
+            <div class="">
+              <h3 class="text-prediction mb-[20px] text-[32px]" data-speed="50" data-text="Relatable prediction events"></h3>
+            </div>
+            <!-- Linea -->
+            <div class="text-neutral-600 group-hover:text-neutral-300 transition">
+              <p>Predict anything under the sun with the community, the events that interest you, from politics, sports, Web3 events, and more</p>
+            </div>
+          </div>
+
+          <div class="hidden md:flex justify-end mt-[20px]">
+            <svg class="animated-path linea-svg hidden group-hover:block" width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M70 71L70 19.0964C70 16.4442 68.9464 13.9007 67.0711 12.0253L58.9747 3.92893C57.0993 2.05357 54.5558 1.00001 51.9036 1.00001L-2.05114e-06 1" stroke="white" stroke-width="2"/>
+              </svg>
+          </div>
+
+        </div>
+
+        <!-- Work > Luck -->
+        <div class="col-span-3 group grid grid-cols-3">
+
+          <div class="hidden md:flex mt-[20px]">            
+            <svg class="animated-path linea-svg hidden group-hover:block" width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M71 1L19.0964 1C16.4442 1 13.9007 2.05357 12.0253 3.92893L3.92893 12.0253C2.05357 13.9007 1.00001 16.4442 1.00001 19.0964L1 71" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div class="col-span-3 md:col-span-2">
+            <!-- Título -->
+            <div class="">
+              <h3 class="text-prediction mb-[20px] text-[32px]" data-speed="50" data-text="Work > Luck"></h3>
+            </div>
+
+            <!-- Linea -->
+            <div class="text-neutral-600	 group-hover:text-neutral-300 transition">
+              <p>Prediction Events designed for users who wants to leverage on their knowledge and analytical skills around a topic of interest, giving luck a run for its money.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Frictionless Prediction -->
+        <div class="col-span-3 items-end flex group grid grid-cols-3">
+          
+          <div class="col-span-3 md:col-span-2">
+            <!-- Título -->
+            <div class="">
+              <h3 class="text-prediction mb-[20px] text-[32px]" data-speed="50" data-text="Frictionless Prediction"></h3>
+            </div>
+
+            <!-- Linea -->
+            <div class="text-neutral-600 group-hover:text-neutral-300 transition">
+              <p>Talk is easy, and now we make action easy as well, as it should be all along. Designed by users, for users to get in and out easily.</p>
+            </div>
+          </div>
+
+          <div class="items-end hidden md:flex justify-end mb-[20px]">
+            <svg class="animated-path linea-svg hidden group-hover:block rotate-90" width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M70 71L70 19.0964C70 16.4442 68.9464 13.9007 67.0711 12.0253L58.9747 3.92893C57.0993 2.05357 54.5558 1.00001 51.9036 1.00001L-2.05114e-06 1" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- Community -->
+        <div class="col-span-3 content-end group grid grid-cols-3">
+
+          <div class="hidden md:flex items-end mb-[20px]">
+            <svg class="animated-path linea-svg hidden group-hover:block -rotate-180" width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M70 71L70 19.0964C70 16.4442 68.9464 13.9007 67.0711 12.0253L58.9747 3.92893C57.0993 2.05357 54.5558 1.00001 51.9036 1.00001L-2.05114e-06 1" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div class="col-span-3 md:col-span-2">
+            <!-- Título -->
+            <div class="">
+              <h3 class="text-prediction mb-[20px]  text-[32px]" data-speed="50" data-text="Community — Our pot of gold"></h3>
+            </div>
+
+            <!-- Descripcion -->
+            <div class="text-neutral-600 mb-[20px] group-hover:text-neutral-300 transition">
+              <p>As a decentralized product, you’re predicting with many others in the community, humans with common interest as yourself. Help yourself to the thrash talks and bragging rights with the ones who understand!</p>
+            </div>
+
+            <div class="">
+
+              <!-- Top edge -->
+              <svg class="w-full stroke-neutral-900" viewBox="0 0 322 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 28V26.1078C1 23.3496 2.08755 20.7043 4.02341 18.7539L18.6217 4.04609C20.5576 2.09571 23.1832 1 25.9209 1H31.9677H290.032L310.677 1C316.378 1 321 5.65624 321 11.4V28" stroke-width="2"/>
+              </svg>
+
+              <!-- Content -->
+              <div class="border-solid border-x-2 border-neutral-900 mr-[1px] flex items-center justify-center gap-[5px]">
+                  
+                  <div class="mr-[20px]">Join us!</div>
+
+                  <!-- Telegram -->
+                  <a class="group/carlos flex items-center justify-center" href="https://telegram.com" target="_blank">                    
+                    <svg class="absolute group-hover/carlos:fill-black fill-white transition mr-[2px]" width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.95 1.27766C18.0167 1.07593 18.0167 0.87419 17.95 0.605208C17.95 0.470717 17.8165 0.268981 17.7498 0.201736C17.5497 -1.55315e-07 17.2161 0 17.0827 0C16.4822 0 15.4815 0.336227 10.8782 2.28634C9.27701 2.9588 6.07468 4.30371 1.2712 6.45556C0.470617 6.79179 0.0703264 7.06077 0.00361136 7.39699C-0.0631037 7.93496 0.804192 8.13669 1.80492 8.47292C2.67221 8.7419 3.80637 9.07813 4.40681 9.07813C4.94053 9.07813 5.54096 8.87639 6.20811 8.40568C10.678 5.31239 13.013 3.76574 13.1465 3.76574C13.2799 3.76574 13.4133 3.6985 13.4801 3.76574C13.6135 3.90023 13.6135 4.03472 13.5468 4.10197C13.4801 4.4382 9.27701 8.33843 9.01015 8.60741C8.07613 9.54885 7.00869 10.1541 8.67657 11.23C10.0776 12.1714 10.8782 12.7766 12.3459 13.7181C13.2799 14.3233 14.0138 15.063 14.9478 14.9957C15.4148 14.9285 15.8818 14.525 16.0819 13.2473C16.6824 10.3558 17.7498 3.90023 17.95 1.27766Z"/>
+                      </svg>
+
+                    <svg  class="group-hover/carlos:fill-white fill-[#0A0A0A] transition" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28.0774 0H11.9226H9.59455C8.54053 0 7.52968 0.421427 6.78437 1.17157L1.16401 6.82843C0.418709 7.57857 0 8.59599 0 9.65685V36C0 38.2091 1.77931 40 3.97419 40H11.9226H28.0774H30.4054C31.4595 40 32.4703 39.5786 33.2156 38.8284L38.836 33.1716C39.5813 32.4214 40 31.404 40 30.3431V4C40 1.79086 38.2207 0 36.0258 0H28.0774Z" />
+                    </svg>
+                  </a>
+                  <!-- Twitter -->
+                  <a class="group/carlos flex items-center justify-center" href="https://x.com" target="_blank">
+                    <svg class="absolute group-hover/carlos:fill-black fill-white transition" width="17" height="15" viewBox="0 0 17 15"xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.3885 0H15.9953L10.3002 6.35385L17 15H11.7541L7.64539 9.75615L2.94405 15H0.335697L6.42711 8.20385L0 0H5.37904L9.09299 4.79308L13.3885 0ZM12.4736 13.4769H13.918L4.59417 1.44308H3.04413L12.4736 13.4769Z"/>
+                    </svg>
+
+                    <svg  class="group-hover/carlos:fill-white fill-[#0A0A0A] transition" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28.0774 0H11.9226H9.59455C8.54053 0 7.52968 0.421427 6.78437 1.17157L1.16401 6.82843C0.418709 7.57857 0 8.59599 0 9.65685V36C0 38.2091 1.77931 40 3.97419 40H11.9226H28.0774H30.4054C31.4595 40 32.4703 39.5786 33.2156 38.8284L38.836 33.1716C39.5813 32.4214 40 31.404 40 30.3431V4C40 1.79086 38.2207 0 36.0258 0H28.0774Z" />
+                    </svg>
+                  </a>
+                  <!-- Discord -->
+                  <a class="group/carlos flex items-center justify-center" href="https://discord.com" target="_blank">
+                    <svg class="absolute group-hover/carlos:fill-black fill-white transition" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.9569 1.25403C19.2028 4.5361 20.3257 8.22005 19.9173 12.4733C19.9173 12.4733 19.9173 12.5068 19.8833 12.5068C18.3861 13.612 16.6847 14.4493 14.8812 14.9851C14.8472 15.0186 14.8472 14.9851 14.8132 14.9851C14.4389 14.4493 14.0986 13.9134 13.7924 13.3441C13.7924 13.3106 13.7924 13.3106 13.7924 13.2771L13.8264 13.2436C14.3708 13.0427 14.8812 12.8082 15.3917 12.5068C15.3917 12.5068 15.4257 12.5068 15.4257 12.4733C15.4257 12.4398 15.4257 12.4398 15.3917 12.4064C15.2896 12.3394 15.1875 12.2724 15.0854 12.1719C15.0514 12.1719 15.0514 12.1719 15.0173 12.1719C11.7847 13.6455 8.24583 13.6455 4.97917 12.1719C4.94515 12.1719 4.91112 12.1719 4.91112 12.1719C4.80904 12.2724 4.70695 12.3394 4.60487 12.4064C4.57084 12.4398 4.57084 12.4398 4.57084 12.4733C4.57084 12.5068 4.57084 12.5068 4.60487 12.5068C5.08126 12.8082 5.6257 13.0427 6.17014 13.2436C6.17014 13.2436 6.17014 13.2771 6.20417 13.2771C6.20417 13.3106 6.20417 13.3106 6.20417 13.3441C5.89792 13.9134 5.55765 14.4493 5.18334 14.9851C5.14931 14.9851 5.11529 15.0186 5.11529 14.9851C3.31182 14.4493 1.61043 13.612 0.113212 12.5068C0.0791843 12.5068 0.0791843 12.4733 0.0791843 12.4733C-0.261093 8.78938 0.453489 5.07194 3.0396 1.25403C3.0396 1.25403 3.0396 1.25403 3.07362 1.25403C4.36668 0.651203 5.72778 0.249318 7.12292 0.0148846C7.15695 -0.0186058 7.19098 0.0148846 7.19098 0.0148846C7.39514 0.349789 7.56528 0.718184 7.70139 1.05309C9.23264 0.818655 10.7639 0.818655 12.2951 1.05309C12.4312 0.718184 12.6014 0.349789 12.8055 0.0148846C12.8055 0.0148846 12.8396 -0.0186058 12.8736 0.0148846C14.2687 0.249318 15.6298 0.651203 16.9229 1.25403C16.9569 1.25403 16.9569 1.25403 16.9569 1.25403ZM6.68056 10.2295C7.66736 10.2295 8.48403 9.32523 8.48403 8.25354C8.48403 7.14835 7.70139 6.2776 6.68056 6.2776C5.69376 6.2776 4.87709 7.14835 4.87709 8.25354C4.87709 9.32523 5.69376 10.2295 6.68056 10.2295ZM13.316 10.2295C14.3368 10.2295 15.1194 9.32523 15.1194 8.25354C15.1535 7.14835 14.3368 6.2776 13.316 6.2776C12.3292 6.2776 11.5465 7.14835 11.5465 8.25354C11.5465 9.32523 12.3292 10.2295 13.316 10.2295Z"/>
+                    </svg>
+                    <svg  class="group-hover/carlos:fill-white fill-[#0A0A0A] transition" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M28.0774 0H11.9226H9.59455C8.54053 0 7.52968 0.421427 6.78437 1.17157L1.16401 6.82843C0.418709 7.57857 0 8.59599 0 9.65685V36C0 38.2091 1.77931 40 3.97419 40H11.9226H28.0774H30.4054C31.4595 40 32.4703 39.5786 33.2156 38.8284L38.836 33.1716C39.5813 32.4214 40 31.404 40 30.3431V4C40 1.79086 38.2207 0 36.0258 0H28.0774Z" />
+                    </svg>
+                  </a>
+              </div>
+
+              <!-- Bottom edge -->
+              <svg class="rotate-180 w-full stroke-neutral-900" viewBox="0 0 322 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 28V26.1078C1 23.3496 2.08755 20.7043 4.02341 18.7539L18.6217 4.04609C20.5576 2.09571 23.1832 1 25.9209 1H31.9677H290.032L310.677 1C316.378 1 321 5.65624 321 11.4V28" stroke-width="2"/>
+              </svg>
+             
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Products  -->
+    <section id="products" class="h-fit md:h-screen pt-[90px] flex items-center">
+      <div> 
+
+        <!-- Title  -->
+        <div class="mb-[30px]">
+          <h5 class="text-prediction" data-text="OUR ECOSYSTEM" data-speed="50"></h5>
+          <h2 class="text-prediction text-[34px] 2xl:text-[54px]" data-text="Products & partners" data-speed="50"></h2>
+        </div>
+        
+        <!-- Products  -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 ">
+
+          <!-- ROBINOS  -->
+          <div class="p-[30px] 2xl:p-[50px] frosty rounded-[20px]">
+            
+            <!-- Title  -->
+            <div class="flex justify-between mb-[20px]">
+
+                <h3 class="text-prediction text-[32px]" data-text="Robinos" data-speed="50"></h3>
+                
+                <!-- Boton  -->
+                <a class="group flex items-center h-[45px] z-30" href="https://robinos.finance" target="_blank">
+
+                  <svg width="15" height="45" viewBox="0 0 15 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+                  </svg>
+
+                  <div class="h-full group-hover:bg-[#FF893C] bg-white flex items-center text-link transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    Launch 
+                    <svg class="ml-[10px] group-hover:rotate-45 transition " width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z" fill="#000"/>
+                    </svg>
+                  </div>
+
+                  <svg width="15" height="45" viewBox="0 0 15 45" xmlns="http://www.w3.org/2000/svg" class="rotate-180 fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Description  -->
+            <div class="relative text-neutral-300">
+              <p>
+                Robinos is a predictions market with its dedicated app chain powered by Arbitrum Orbit. Predict on the app chain to experience how easy it is to make a prediction.
+                <br><br>
+                Powered by AI to provide the most relevant information you need for each event for you to make a decision!
+              </p>
+            </div>
+
+            <object class="absolute bottom-0 left-0 z-0 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+            <object class="absolute top-0 right-0 rotate-180 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+
+          </div>
+
+          <!-- MINO NFT  -->
+          <div class="p-[30px] 2xl:p-[50px] frosty rounded-[20px]">
+            
+            <!-- Title  -->
+            <div class="flex justify-between mb-[20px]">
+
+                <h3 class="text-prediction text-[32px]" data-text="Mino NFT" data-speed="50"></h3>
+                
+                <!-- Boton  -->
+                <a class="group flex items-center h-[45px] z-30" href="https://mino.robinos.finance" target="_blank">
+
+                  <svg width="15" height="45" viewBox="0 0 15 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+                  </svg>
+
+                  <div class="h-full group-hover:bg-[#FF893C] bg-white flex items-center text-link transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    Launch 
+                    <svg class="ml-[10px] group-hover:rotate-45 transition " width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z" fill="#000"/>
+                    </svg>
+                  </div>
+
+                  <svg width="15" height="45" viewBox="0 0 15 45" xmlns="http://www.w3.org/2000/svg" class="rotate-180 fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Description  -->
+            <div class="relative text-neutral-300">
+              <p>
+                Started as a NFT collection for agents like the legendary Mino Raiola in 2022, Mino NFT is now a fantasy sports platform.
+                <br><br>
+                Get hold of your favorite players, get rewarded when they do well for their clubs and country, and form your dream team!
+              </p>
+            </div>
+
+            <object class="absolute bottom-0 left-0 z-0 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+            <object class="absolute top-0 right-0 rotate-180 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+
+          </div>
+
+          <!-- SWAPSICLE  -->
+          <div class="p-[30px] 2xl:p-[50px] frosty rounded-[20px]">
+            
+            <!-- Title  -->
+            <div class="flex justify-between mb-[20px]">
+
+                <h3 class="text-prediction text-[32px]" data-text="Swapsicle" data-speed="50"></h3>
+                
+                <!-- Boton  -->
+                <a class="group flex items-center h-[45px] z-30" href="https://www.swapsicle.io/" target="_blank">
+
+                  <svg width="15" height="45" viewBox="0 0 15 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+                  </svg>
+
+                  <div class="h-full group-hover:bg-[#FF893C] bg-white flex items-center text-link transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    Launch 
+                    <svg class="ml-[10px] group-hover:rotate-45 transition " width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z" fill="#000"/>
+                    </svg>
+                  </div>
+
+                  <svg width="15" height="45" viewBox="0 0 15 45" xmlns="http://www.w3.org/2000/svg" class="rotate-180 fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Description  -->
+            <div class="relative text-neutral-300">
+              <p>
+                Powered by Algebra, Swapsicle is the first AMM DEX that has integrated the Algebra Integral solution.
+                <br><br>
+                The advanced AMM solution will enable more advanced supporting mechanisms for predictions market moving forward.
+              </p>
+            </div>
+
+            <object class="absolute bottom-0 left-0 z-0 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+            <object class="absolute top-0 right-0 rotate-180 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+
+          </div>
+
+          <!-- EZCROW  -->
+          <div class="p-[30px] 2xl:p-[50px] frosty rounded-[20px]">
+            
+            <!-- Title  -->
+            <div class="flex justify-between mb-[20px]">
+
+                <h3 class="text-prediction text-[32px]" data-text="Ezcrow" data-speed="50"></h3>
+                
+                <!-- Boton  -->
+                <a class="group flex items-center h-[45px] z-30" href="https://robinos.finance" target="_blank">
+
+                  <svg width="15" height="45" viewBox="0 0 15 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+                  </svg>
+
+                  <div class="h-full group-hover:bg-[#FF893C] bg-white flex items-center text-link transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    Launch 
+                    <svg class="ml-[10px] group-hover:rotate-45 transition " width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z" fill="#000"/>
+                    </svg>
+                  </div>
+
+                  <svg width="15" height="45" viewBox="0 0 15 45" xmlns="http://www.w3.org/2000/svg" class="rotate-180 fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+                    <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Description  -->
+            <div class="relative text-neutral-300">
+              <p>
+                Getting your money in has always been a very challenging affair for prediction fans.
+                <br><br>
+                Ezcrow is a P2P ramp solution. Use your fiat to enter the world of Predicted and get into action quickly.
+              </p>
+            </div>
+
+            <object class="absolute bottom-0 left-0 z-0 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+            <object class="absolute top-0 right-0 rotate-180 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMING SOON -->
+    <section id="coming-soon" class="pt-[90px] md:pt-[0px] h-fit md:h-screen flex items-center">
+      <div> 
+
+        <!-- Title  -->
+        <div class="mb-[30px]">
+          <h5 class="text-prediction" data-text="COMING SOON" data-speed="50"></h5>
+          <h2 class="text-prediction text-[34px] 2xl:text-[54px]" data-text="Future products" data-speed="50"></h2>
+        </div>
+        
+        <!-- Products  -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+
+          <!-- PRODUCT 1  -->
+          <div class="p-[50px] lg:p-[100px] frosty rounded-[20px]">
+            
+            <!-- Title  -->
+            <div class="mb-[20px]">
+                <h5 class="text-prediction" data-text="UPCOMING" data-speed="50">OUR ECOSYSTEM</h5>
+                <h3 class="random-text text-[32px]" data-length="10"></h3>
+            </div>
+
+            <!-- Description  -->
+            <div class="relative text-neutral-300">
+              <p>
+                Need your friend or CT to put their money where their mouth is? Now you can! Stream the action as well so everyone sees it!
+                <br><br>
+                AI to help in prediction event creation and clear ways to decide a result in the end.
+              </p>
+            </div>
+
+            <object class="absolute bottom-0 left-0 z-0 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+            <object class="absolute top-0 right-0 rotate-180 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+
+          </div>
+
+          <!-- PRODUCT 2  -->
+          <div class="p-[50px] lg:p-[100px] frosty rounded-[20px]">
+            
+            <!-- Title  -->
+            <div class="mb-[20px]">
+              <h5 class="text-prediction" data-text="UPCOMING" data-speed="50">OUR ECOSYSTEM</h5>
+              <h3 class="random-text text-[32px]" data-length="10"></h3>
+            </div>
+
+            <!-- Description  -->
+            <div class="relative text-neutral-300">
+              <p>
+                Want that extra insurance from rugpulls? Get the project to put up a prediction event around their performance!
+                <br><br>
+                Token holders of projects will be allowed to vote for the results they deem accurate at the end of prediction events!
+              </p>
+            </div>
+
+            <object class="absolute bottom-0 left-0 z-0 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+            <object class="absolute top-0 right-0 rotate-180 select-none pointer-events-none	" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CIFRAS -->
+    <section class="h-fit pt-[90px] md:h-screen flex items-center">
+      <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-[10px]">
+
+        <!-- Predicted events -->
+        <div class="flex items-center justify-center frosty-cifras rounded-[20px] py-[50px]">
+          <div class="flex flex-col">
+            <h2 class="text-prediction flex justify-center text-orange text-[54px]" data-speed="50" data-text="89,298"></h2>
+            <h4 class="text-prediction flex justify-center" data-speed="50" data-text="predicted events"></h4>
+          </div>
+        </div>
+
+        <!-- Amount transacted -->
+        <div class="flex items-center justify-center frosty-cifras rounded-[20px] py-[50px]">
+          <div class="flex flex-col">
+            <h2 class="text-prediction flex justify-center text-[54px] text-orange" data-speed="50" data-text="$2,3M"></h2>
+          <h4 class="text-prediction flex justify-center font-medium" data-speed="50" data-text="amount transacted"></h4>
+          </div>
+        </div>
+
+        <!-- Unique users/addresses -->
+        <div class="flex items-center justify-center  frosty-cifras rounded-[20px] py-[50px]">
+          <div class="flex flex-col">
+            <h2 class="text-prediction flex justify-center text-orange text-[54px]" data-speed="50" data-text="17,298"></h2>
+            <h4 class="text-prediction flex justify-center" data-speed="50" data-text="unique users/addresses"></h4>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Franchise  -->
+    <section id="franchise" class="pt-[90px] md:pt-[0px] pb-[40px] grid h-fit md:h-screen content-between">
+
+      <div class="">
+      </div>
+
+      <div>
+
+        <!-- Title  -->
+        <div class="mb-[30px]">
+          <h5 class="text-prediction" data-text="FRANCHISE" data-speed="50"></h5>
+          <h2 class="text-prediction text-[34px] 2xl:text-[54px]" data-text="Work with us!" data-speed="50"></h2>
+        </div>
+
+        <!-- CARD  -->
+        <div class="p-[70px] frosty rounded-[20px] w-full ">
+                    
+          <!-- Title  -->
+          <h3 class="text-prediction text-[34px] inline-flex" data-speed="50" data-highlight="12,13,14,15,16,17,18,19" data-text="Interested in running a prediction platform for your friends & family only? It's easier now than ever!"></h3>
+
+          <!-- Boton  -->
+          <a class="group flex items-center h-[45px] z-30 mt-[30px] w-fit" href="https://robinos.finance" target="_blank">
+
+            <svg width="15" height="45" viewBox="0 0 15 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+              <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+            </svg>
+
+            <div class="h-full group-hover:bg-[#FF893C] bg-white flex items-center text-link transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+              Get in touch with us! 
+              <svg class="ml-[10px] group-hover:rotate-45 transition " width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.7396 3.17113C11.1582 2.5896 9.71991 1.15093 8.82362 0.257446C8.66313 0.0908632 8.43906 0 8.20893 0H0.308857C0.139288 0 0 0.139324 0 0.308935V1.38718C0 1.5689 0.148372 1.71731 0.330053 1.71731H8.56624C8.72672 1.71731 8.80545 1.91116 8.69341 2.02322L0.184709 10.531C0.0666162 10.6492 0 10.8067 0 10.9732V11.6668C0 11.8486 0.148372 11.997 0.330053 11.997H0.941711C1.16276 11.997 1.37472 11.9091 1.52914 11.7547L9.97729 3.30439C10.0893 3.19233 10.2831 3.27108 10.2831 3.4316V11.7032C10.2831 11.8667 10.4164 12 10.5799 12H11.6911C11.8607 12 12 11.8637 12 11.6941V3.79505C12 3.56184 11.9092 3.33771 11.7426 3.17113H11.7396Z" fill="#000"/>
+              </svg>
+            </div>
+
+            <svg width="15" height="45" viewBox="0 0 15 45" xmlns="http://www.w3.org/2000/svg" class="rotate-180 fill-white group-hover:fill-[#FF893C] transition group-hover:drop-shadow-[0_0_10px_rgba(255,137,60,0.75)]">
+              <path d="M0 12.0711V40C0 42.7614 2.23858 45 5 45H15V0H12.0711C10.745 0 9.47322 0.526783 8.53554 1.46446L1.46447 8.53553C0.526784 9.47322 0 10.745 0 12.0711Z"/>
+              </svg>
+          </a>
+          <object class="absolute bottom-0 right-0 -rotate-90 select-none pointer-events-none	-z-10 h-full" type="image/svg+xml" data="img/grid.svg" height="250px"></object>
+
+        </div>
+      </div>
+
+        <div class="text-center mt-[30px] md:mt-[0]">
+          © 2024 Predicted Labs
+        </div>
+
+    </section>
+
+  </main>
+  
+  <canvas id="hero-lightpass" class="hidden sm:block"></canvas>
+  <script src="js/scripts.js"></script>
+  <script src="js/snap.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/predict-text.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+</html>
