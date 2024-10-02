@@ -1,3 +1,5 @@
+@import url('clash-display.css');
+
 html {
   height: 100vh;
 }
@@ -9,7 +11,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #fff;
-  font-family: "Clash Display" !important;
+  font-family: "ClashDisplay-Variable" !important;
 }
 
 @media (max-width: 600px) {
@@ -24,10 +26,6 @@ body {
   }
 }
 
-
-.randomText{
-  font-family: IBM Plex Mono Regular;
-}
 
 body.scrolling {
   scroll-behavior: smooth;
@@ -130,7 +128,7 @@ h6{
 }
 
 .false-h3{
-  font-family: "Clash Display" !important;
+  font-family: "ClashDisplay-Variable" !important;
   font-weight: 500 !important;
   line-height: normal;
 }
@@ -247,9 +245,8 @@ p{
 }
 
 .font-2{
-  font-family: IBM Plex Mono Regular;
+  font-family: "IBM Plex Mono";
 }
-
 
 section {
   scroll-snap-align: start;
