@@ -656,10 +656,18 @@
 
   </main>
   
-  <canvas id="hero-lightpass" class="hidden sm:block"></canvas>
+  <video id="backgroundVideo" muted playsinline class="background-video" style="display: block;">
+    <source src="assets/video_landing_1080p.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <video id="reverseBackgroundVideo" muted playsinline class="background-video" style="display: none;">
+    <source src="assets/video_landing_1080p_reverse.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <script src="js/scripts.js"></script>
   <script src="js/snap.js"></script>
-  <script src="js/canvas.js"></script>
+  <script src="js/video.js"></script>
   <script src="js/predict-text.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 
